@@ -1,0 +1,21 @@
+*{
+	font-family: 'Lato', sans-serif;
+}
+.brand{
+	text-align: center;
+    background: #444343;
+    padding: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 3em;
+    color: #BDBDBD;
+    margin: 0px;
+}
+.container{
+	margin: 20px auto;
+}
+footer{
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}

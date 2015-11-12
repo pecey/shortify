@@ -1,0 +1,47 @@
+{% extends "master.html" %}
+{% block content %}
+<div class="row">
+	<div class="col-md-6 col-xs-12">
+		How does it work? 
+		<hr> 
+		<ol>
+			<li>Enter the URL to shorten</li>
+			<li>Enter a customized short URL or let us shorten it</li>
+			<li>Shortify!</li>
+		</ol>
+	</div>
+	<div class="col-md-6 col-xs-12">
+		<form method="POST" action="{{ url_for('shortify') }}">
+			<div class="form-group">
+				<label for="masterURL">Full URL</label>
+				<input type="text" placeholder="Enter URL" name="longURL" class="form-control" id="longURL">
+			</div>
+			<div class="form-group">
+				<label for="shortURL">Short URL</label>
+				<input type="text" placeholder="Enter shortened URL" name="shortURL" class="form-control" id="shortURL">
+			</div>
+			<button class="btn btn-default">Shortify</button>
+		</form>
+		<div class="row response"></div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(".btn").click(function(e){
+		e.preventDefault();
+		var shortURL = $("#shortURL").val();
+		var longURL = $("#longURL").val();
+		var response = $(".response");
+		$.ajax({
+			url: "{{ url_for('shortify') }}",
+			data: {shortURL: shortURL, longURL: longURL},
+			method: "POST",
+			success:function(e){
+				console.log(e)
+				response.addClass("well").addClass("well-sm");
+				response.empty()
+				response.append(JSON.parse(e));
+			}
+		});
+	});
+</script>
+{% endblock %}
