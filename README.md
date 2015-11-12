@@ -17,3 +17,7 @@ Start the server
 ```bash
 python2 routes.py
 ```
+
+# Screenshots
+![Landing page](https://raw.githubusercontent.com/pecey/shortify/master/screenshots/landing.png)
+![Working](https://raw.githubusercontent.com/pecey/shortify/master/screenshots/shortify.png)
