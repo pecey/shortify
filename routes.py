@@ -2,7 +2,6 @@ import flask
 from databaseConnection import connect, insert, query
 from base64 import b32encode, b32decode
 import json
-import requests
 
 app = flask.Flask(__name__)
 
